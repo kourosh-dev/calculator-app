@@ -8,6 +8,9 @@
 
   <!------------ links ------------>
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style/style.css">
   
   <!------------ script ------------>
@@ -19,11 +22,13 @@
     <header class="header">
       <h1 class="h1">calc</h1>
       <div class="container-theme">
-        THEME
+        <span class="theme-label">THEME</span>
         <div class="container-theme-button">
-          <span>1</span>
-          <span>2</span>
-          <span>3</span>
+          <div class="number-themes">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+          </div>
           <button class="theme-button">
             <div class="theme-inner-button"></div>
           </button>
@@ -31,26 +36,99 @@
       </div>
     </header>
     <section class="section">
-      <div class="result"></div>
-      <div class="calculate-buttons-container">
-        <button class="calculate-button">7</button>
-        <button class="calculate-button">8</button>
-        <button class="calculate-button">9</button>
-        <button class="delete-button">DEL</button>
-        <button class="calculate-button">4</button>
-        <button class="calculate-button">5</button>
-        <button class="calculate-button">6</button>
-        <button class="calculate-button">+</button>
-        <button class="calculate-button">1</button>
-        <button class="calculate-button">2</button>
-        <button class="calculate-button">3</button>
-        <button class="calculate-button">-</button>
-        <button class="calculate-button">.</button>
-        <button class="calculate-button">0</button>
-        <button class="calculate-button">/</button>
-        <button class="calculate-button">x</button>
-        <button class="reset-button">reset</button>
-        <button class="equale-button">=</button>
+      <div class="result">399,981</div>
+      <div class="keypad">
+        <div class="shadow-key">
+          <button class="calculate-button key">
+            <span>7</span>
+          </button>
+        </div>
+        <div class="shadow-key">
+          <button class="calculate-button key">
+            <span>8</span>
+          </button>
+        </div>
+        <div class="shadow-key">
+          <button class="calculate-button key">
+            <span>9</span>
+          </button>
+        </div>
+        <div class="shadow-key-blue">
+          <button class="del-key key">
+            <span>del</span>
+          </button>
+        </div>
+        <div class="shadow-key">
+          <button class="calculate-button key">
+            <span>4</span>
+          </button>
+        </div>
+        <div class="shadow-key">
+          <button class="calculate-button key">
+            <span>5</span>
+          </button>
+        </div>
+        <div class="shadow-key">
+          <button class="calculate-button key">
+            <span>6</span>
+          </button>
+        </div>
+        <div class="shadow-key">
+          <button class="calculate-button key">
+            <span>+</span>
+          </button>
+        </div>
+        <div class="shadow-key">
+          <button class="calculate-button key">
+            <span>1</span>
+          </button>
+        </div>
+        <div class="shadow-key">
+          <button class="calculate-button key">
+            <span>2</span>
+          </button>
+        </div>
+        <div class="shadow-key">
+          <button class="calculate-button key">
+            <span>3</span>
+          </button>
+        </div>
+        <div class="shadow-key">
+          <button class="calculate-button key">
+            <span>-</span>
+          </button>
+        </div>
+        <div class="shadow-key">
+          <button class="calculate-button key">
+            <span>.</span>
+          </button>
+        </div>
+        <div class="shadow-key">
+          <button class="calculate-button key">
+            <span>0</span>
+          </button>
+        </div>
+        <div class="shadow-key">
+          <button class="calculate-button key">
+            <span>/</span>
+          </button>
+        </div>
+        <div class="shadow-key">
+          <button class="calculate-button key multiply-key">
+            <span>x</span>
+          </button>
+        </div>
+        <div class="shadow-key-blue shadow-key-reset">
+          <button class="reset-key key">
+            <span>reset</span>
+          </button>
+        </div>
+        <div class="shadow-key-red">
+          <button class="equal-key key">
+            <span>=</span>
+          </button>
+        </div>
+
       </div>
     </section>
   </main>

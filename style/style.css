@@ -1,0 +1,241 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'League Spartan', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+}
+
+:root {
+  /* backgrounds */
+  --gray: hsl(223, 31%, 20%);
+  --dark-gray: hsl(224, 36%, 15%);
+
+  /* keys */
+  --red: hsl(6, 63%, 50%);
+  --dark-red: hsl(6, 70%, 34%);
+  --light-grayish-orange: hsl(30, 25%, 89%);
+  --grayish-orange: hsl(28, 16%, 65%);
+  --blue: hsl(225, 21%, 49%);
+  --dark-blue: hsl(224, 28%, 35%);
+
+  --white: hsl(0, 0%, 100%);
+  --very-dark-grayish-blue: hsl(221, 14%, 31%);
+  --radius-key: 8px;
+}
+
+body {
+  background-color: hsl(222, 26%, 31%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: var(--white);
+}
+
+.main {
+  width: 450px;
+  padding: 40px 24px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 30px;
+}
+
+.h1 {
+  text-transform: lowercase;
+}
+
+.container-theme {
+  display: flex;
+  align-items: end;
+  gap: 16px;
+}
+
+.theme-label {
+  font-size: 12px;
+  margin-bottom: 3px;
+  font-weight: 600;
+}
+
+.container-theme-button {
+  display: flex;
+  flex-direction: column;
+}
+
+.number-themes {
+  display: flex;
+  justify-content: space-between;
+  width: 100%; 
+  font-size: 10px;
+  font-weight: 600;
+  padding-inline: 8px;
+  padding-bottom: 3px;
+}
+
+.theme-button {
+  background-color: var(--gray);
+  padding: 4px;
+  border: none;
+  width: 60px;
+  border-radius: 23px;
+  -webkit-border-radius: 23px;
+  -moz-border-radius: 23px;
+  -ms-border-radius: 23px;
+  -o-border-radius: 23px;
+}
+
+.theme-inner-button {
+  background-color: var(--red);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.section {
+
+}
+
+.result {
+  background-color: var(--dark-gray);
+  width: 100%;
+  height: 110px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-inline: 24px;
+  font-size: 2.7rem;
+  font-weight: 700;
+}
+
+.keypad {
+  padding: 24px;
+  width: 100%;
+  margin-top: 20px;
+  background-color: var(--gray);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 20px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.shadow-key {
+  background-color: var(--grayish-orange);
+}
+
+.key {
+  border-radius: var(--radius-key);
+  -webkit-border-radius: var(--radius-key);
+  -moz-border-radius: var(--radius-key);
+  -ms-border-radius: var(--radius-key);
+  -o-border-radius: var(--radius-key);
+  width: 100%;
+  height: 100%;
+  font-weight: 700;
+  border: none;
+  transform: translateY(-3px);
+  -webkit-transform: translateY(-3px);
+  -moz-transform: translateY(-3px);
+  -ms-transform: translateY(-3px);
+  -o-transform: translateY(-3px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: 12px;
+
+  &:active {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+  }
+
+  span {
+    height: .7em;
+  }
+}
+
+[class*="shadow-key"] {
+  border-radius: var(--radius-key);
+  -webkit-border-radius: var(--radius-key);
+  -moz-border-radius: var(--radius-key);
+  -ms-border-radius: var(--radius-key);
+  -o-border-radius: var(--radius-key);
+}
+
+.shadow-key-blue {
+  background-color: var(--dark-blue);
+  
+  button {
+    background-color: var(--blue);
+    color: var(--white);
+    font-size: 1.2rem;
+  }
+}
+
+.shadow-key-reset {
+  grid-column: 1 / 3;
+}
+
+.shadow-key-red {
+  grid-column: 3 / 5;
+  background-color: var(--dark-red);
+}
+
+.equal-key {
+  background-color: var(--red);
+  color: var(--white);
+  font-size: 1.5rem;
+}
+
+.calculate-button {
+  color: var(--very-dark-grayish-blue);
+  font-size: 2rem;
+  background-color: var(--light-grayish-orange);
+
+}
+
+.multiply-key {
+  font-size: 1.4rem;
+}
+
+.delete-button {
+
+}
+
+.reset-button {
+
+}
+
+.equale-button {
+
+}
+
+@media(max-width: 450px) {
+  .result {
+    padding-inline: 20px;
+  }
+
+  .keypad {
+    gap: 14px;
+    padding: 20px;
+  }
+}
