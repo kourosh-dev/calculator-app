@@ -7,20 +7,43 @@
 }
 
 :root {
+  /* black theme */
   /* backgrounds */
-  --gray: hsl(223, 31%, 20%);
-  --dark-gray: hsl(224, 36%, 15%);
+  --very-dark-main: hsl(222, 26%, 31%);
+  --very-dark-toggle-keypad: hsl(223, 31%, 20%);
+  --very-dark-screen: hsl(224, 36%, 15%);
 
   /* keys */
+  --dark-blue-key: hsl(225, 21%, 49%);
+  --dark-blue-shadow-key: hsl(224, 28%, 35%);
   --red: hsl(6, 63%, 50%);
   --dark-red: hsl(6, 70%, 34%);
   --light-grayish-orange: hsl(30, 25%, 89%);
   --grayish-orange: hsl(28, 16%, 65%);
-  --blue: hsl(225, 21%, 49%);
-  --dark-blue: hsl(224, 28%, 35%);
 
-  --white: hsl(0, 0%, 100%);
+  /* text */
   --very-dark-grayish-blue: hsl(221, 14%, 31%);
+  --white: hsl(0, 0%, 100%);
+
+  /* light theme */
+  /* backgrounds */
+  --light-gray: hsl(0, 0%, 90%);
+  --grayish-red: hsl(0, 5%, 81%);
+  --very-light-gray: hsl(0, 0%, 93%);
+
+  /* keys */
+  --dark-moderate-cyan: hsl(185, 42%, 37%);
+  --very-dark-cyan: hsl(185, 58%, 25%);
+  --orange: hsl(25, 98%, 40%);
+  --dark-orange: hsl(25, 99%, 27%);
+  --light-grayish-yellow: hsl(45, 7%, 89%);
+  --dark-grayish-orange: hsl(35, 11%, 61%);
+
+  /* light style text */
+  --very-dark-grayish-yellow: hsl(60, 10%, 19%);
+  --white: hsl(0, 0%, 100%);
+
+  /* sizes */
   --radius-key: 8px;
 }
 
@@ -66,45 +89,57 @@ body {
   flex-direction: column;
 }
 
-.number-themes {
-  display: flex;
-  justify-content: space-between;
-  width: 100%; 
-  font-size: 10px;
-  font-weight: 600;
-  padding-inline: 8px;
-  padding-bottom: 3px;
-}
-
 .theme-button {
-  background-color: var(--gray);
+  background-color: var(--very-dark-toggle-keypad);
   padding: 4px;
   border: none;
-  width: 60px;
+  width: 50px;
   border-radius: 23px;
   -webkit-border-radius: 23px;
   -moz-border-radius: 23px;
   -ms-border-radius: 23px;
   -o-border-radius: 23px;
+  position: relative;
 }
 
 .theme-inner-button {
   background-color: var(--red);
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
+  transition: 0.15s;
+  -webkit-transition: 0.15s;
+  -moz-transition: 0.15s;
+  -ms-transition: 0.15s;
+  -o-transition: 0.15s;
+}
+
+.part-of-theme {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  z-index: 1000;
+}
+
+.dark {
+  left: 0;
+}
+
+.light {
+  left: 50%;
 }
 
 .section {
 
 }
 
-.result {
-  background-color: var(--dark-gray);
+.display {
+  background-color: var(--very-dark-screen);
   width: 100%;
   height: 110px;
   border-radius: 10px;
@@ -112,19 +147,19 @@ body {
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  text-align: end;
   padding-inline: 24px;
   font-size: 2.7rem;
   font-weight: 700;
+  border: none;
+  color: var(--white);
 }
 
 .keypad {
   padding: 24px;
   width: 100%;
   margin-top: 20px;
-  background-color: var(--gray);
+  background-color: var(--very-dark-toggle-keypad);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 1fr);
@@ -150,15 +185,15 @@ body {
   height: 100%;
   font-weight: 700;
   border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: 12px;
   transform: translateY(-3px);
   -webkit-transform: translateY(-3px);
   -moz-transform: translateY(-3px);
   -ms-transform: translateY(-3px);
   -o-transform: translateY(-3px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-block: 12px;
 
   &:active {
     transform: translateY(0);
@@ -182,10 +217,10 @@ body {
 }
 
 .shadow-key-blue {
-  background-color: var(--dark-blue);
+  background-color: var(--dark-blue-shadow-key);
   
   button {
-    background-color: var(--blue);
+    background-color: var(--dark-blue-key);
     color: var(--white);
     font-size: 1.2rem;
   }
@@ -227,6 +262,11 @@ body {
 
 .equale-button {
 
+}
+
+/* javascript classes */
+.body-js {
+  background-color: ;
 }
 
 @media(max-width: 450px) {

@@ -17,114 +17,111 @@
   <script defer src="script/main.js"></script>
 
 </head>
-<body>
+<body id="js-body">
   <main class="main">
     <header class="header">
-      <h1 class="h1">calc</h1>
+      <h1 class="h1" id="js-h1">calc</h1>
       <div class="container-theme">
-        <span class="theme-label">THEME</span>
+        <span class="theme-label" id="js-label-theme">THEME</span>
         <div class="container-theme-button">
-          <div class="number-themes">
-            <span>1</span>
-            <span>2</span>
-            <span>3</span>
-          </div>
-          <button class="theme-button">
-            <div class="theme-inner-button"></div>
+          <button class="theme-button" id="js-theme-button">
+            <div class="theme-inner-button" id="js-button-theme-inner"></div>
+            <div class="dark part-of-theme" id="js-black-theme"></div>
+            <div class="light part-of-theme" id="js-light-theme"></div>
           </button>
         </div>
       </div>
     </header>
     <section class="section">
-      <div class="result">399,981</div>
-      <div class="keypad">
-        <div class="shadow-key">
-          <button class="calculate-button key">
+      <input type="text" class="display" id="js-display" value="0" disabled>
+      <div class="keypad" id="js-keypad">
+        <div class="shadow-key js-shadow-key">
+          <button class="calculate-button key js-operation-key">
             <span>7</span>
           </button>
         </div>
-        <div class="shadow-key">
-          <button class="calculate-button key">
+        <div class="shadow-key js-shadow-key">
+          <button class="calculate-button key js-operation-key">
             <span>8</span>
           </button>
         </div>
-        <div class="shadow-key">
-          <button class="calculate-button key">
+        <div class="shadow-key js-shadow-key">
+          <button class="calculate-button key js-operation-key">
             <span>9</span>
           </button>
         </div>
-        <div class="shadow-key-blue">
-          <button class="del-key key">
+        <div class="shadow-key-blue js-shadow-key-blue">
+          <button class="del-key key" id="js-delete-key">
             <span>del</span>
           </button>
         </div>
-        <div class="shadow-key">
-          <button class="calculate-button key">
+        <div class="shadow-key js-shadow-key">
+          <button class="calculate-button key js-operation-key">
             <span>4</span>
           </button>
         </div>
-        <div class="shadow-key">
-          <button class="calculate-button key">
+        <div class="shadow-key js-shadow-key">
+          <button class="calculate-button key js-operation-key">
             <span>5</span>
           </button>
         </div>
-        <div class="shadow-key">
-          <button class="calculate-button key">
+        <div class="shadow-key js-shadow-key">
+          <button class="calculate-button key js-operation-key">
             <span>6</span>
           </button>
         </div>
-        <div class="shadow-key">
-          <button class="calculate-button key">
+        <div class="shadow-key js-shadow-key">
+          <button class="calculate-button key js-operation-key">
             <span>+</span>
           </button>
         </div>
-        <div class="shadow-key">
-          <button class="calculate-button key">
+        <div class="shadow-key js-shadow-key">
+          <button class="calculate-button key js-operation-key">
             <span>1</span>
           </button>
         </div>
-        <div class="shadow-key">
-          <button class="calculate-button key">
+        <div class="shadow-key js-shadow-key">
+          <button class="calculate-button key js-operation-key">
             <span>2</span>
           </button>
         </div>
-        <div class="shadow-key">
-          <button class="calculate-button key">
+        <div class="shadow-key js-shadow-key">
+          <button class="calculate-button key js-operation-key">
             <span>3</span>
           </button>
         </div>
-        <div class="shadow-key">
-          <button class="calculate-button key">
+        <div class="shadow-key js-shadow-key">
+          <button class="calculate-button key js-operation-key">
             <span>-</span>
           </button>
         </div>
-        <div class="shadow-key">
-          <button class="calculate-button key">
+        <div class="shadow-key js-shadow-key">
+          <button class="calculate-button key js-operation-key">
             <span>.</span>
           </button>
         </div>
-        <div class="shadow-key">
-          <button class="calculate-button key">
+        <div class="shadow-key js-shadow-key">
+          <button class="calculate-button key js-operation-key">
             <span>0</span>
           </button>
         </div>
-        <div class="shadow-key">
-          <button class="calculate-button key">
+        <div class="shadow-key js-shadow-key">
+          <button class="calculate-button key js-operation-key">
             <span>/</span>
           </button>
         </div>
-        <div class="shadow-key">
+        <div class="shadow-key js-shadow-key">
           <button class="calculate-button key multiply-key">
             <span>x</span>
           </button>
         </div>
-        <div class="shadow-key-blue shadow-key-reset">
-          <button class="reset-key key">
+        <div class="shadow-key-blue shadow-key-reset js-shadow-key-blue">
+          <button class="reset-key key" id="js-reset-key">
             <span>reset</span>
           </button>
         </div>
-        <div class="shadow-key-red">
-          <button class="equal-key key">
+        <div class="shadow-key-red" id="js-shadow-key-red">
+          <button class="equal-key key" id="js-equal-key">
             <span>=</span>
           </button>
         </div>
