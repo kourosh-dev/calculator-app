@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="style/style.css">
   
   <!------------ script ------------>
-  <script defer src="script/main.js"></script>
+  <script defer src="scripts/main.js" type="module"></script>
 
 </head>
 <body id="js-body">
@@ -33,7 +33,7 @@
       </div>
     </header>
     <section class="section">
-      <input type="text" class="display" id="js-display" value="0" disabled>
+      <textarea type="text" class="display" id="js-display" value="0" disabled >0</textarea>
       <div class="keypad" id="js-keypad">
         <div class="shadow-key js-shadow-key">
           <button class="calculate-button key js-operation-key">
@@ -111,7 +111,7 @@
           </button>
         </div>
         <div class="shadow-key js-shadow-key">
-          <button class="calculate-button key multiply-key">
+          <button class="calculate-button key multiply-key js-operation-key">
             <span>x</span>
           </button>
         </div>
