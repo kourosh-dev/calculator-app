@@ -85,5 +85,3 @@ export function toggleTheme() {
     shadowKeyRedElm.style.backgroundColor = 'var(--dark-orange)';
   });
 }
-
-toggleTheme();
