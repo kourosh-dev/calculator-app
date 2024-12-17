@@ -6,16 +6,6 @@ export function calculation() {
   const resetKey = document.getElementById('js-reset-key');
   const deleteKey = document.getElementById('js-delete-key');
 
-  /* // add to screen
-    * seperate intered value from screen value//
-    * prevent adding more than one operator//
-    * prevent adding operation if not exist any number//
-    * if operator exist remove last operator and add current//
-    * if value is equal to x convert it to * //
-    * if accure text over flow decrease size of text//
-    * prevent adding floting point more than one in every operation //
-  */
-
   // check if current intered value is operator if it is return it
   function isOperator(value) {
     return ['-', '+', '/', 'x', '.'].includes(value.toLowerCase());
@@ -89,12 +79,6 @@ export function calculation() {
     }
   }
 
-  /* // formating
-    * split value by operator and save it in an array
-    * if value of array is an operator don't format it
-    * if value of array is number format it 
-  */
-
   function formating(experation) {
     const parts = experation.split(/([+\-X/])/);
 
@@ -108,11 +92,7 @@ export function calculation() {
     }).join('');
   }
 
-  /* // delete
-    * delet last charecter from screen
-    * delet last charecter from saved value
-  */
-
+  // removing last character when delete button clicked
   deleteKey.addEventListener('click', () => {
     if (experation.length === 1) {
       experation = '0';
@@ -123,10 +103,13 @@ export function calculation() {
     screen.value = formating(experation);
   });
 
-  /* // reset
-    * reset value of screen
-    * reset value of variable
-  */
+  // reseting value 
+  resetKey.addEventListener('click', () => {
+    experation = '0';
+    screen.value = experation;
+  });
+
+
 
   /* // calculation
     * convert value to actual code and save the result in variable
