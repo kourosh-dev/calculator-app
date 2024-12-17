@@ -4,7 +4,7 @@ export function calculation() {
   const screen = document.getElementById('js-display');
   const equalKey = document.getElementById('js-equal-key');
   const resetKey = document.getElementById('js-reset-key');
-  const deleteKey = document.getElementById('js-delet-key');
+  const deleteKey = document.getElementById('js-delete-key');
 
   /* // add to screen
     * seperate intered value from screen value//
@@ -112,6 +112,16 @@ export function calculation() {
     * delet last charecter from screen
     * delet last charecter from saved value
   */
+
+  deleteKey.addEventListener('click', () => {
+    if (experation.length === 1) {
+      experation = '0';
+    } else {
+      experation = experation.slice(0, -1);
+    }
+
+    screen.value = formating(experation);
+  });
 
   /* // reset
     * reset value of screen
