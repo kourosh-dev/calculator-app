@@ -30,12 +30,11 @@ export function calculation() {
   });
 
   // save experation value
-  let experation = '';
+  let experation = '0';
 
   // add value to screen and experation element
   function addValue(value) {
-    const valueScrn = screen.value;
-    const lastChar = valueScrn.slice(-1);
+    const lastChar = experation.slice(-1);
 
     // perevent add second operator
     if (!isOperator(lastChar) 
@@ -44,14 +43,14 @@ export function calculation() {
       const operators = ['+', '-', '/', 'X'];
 
       for (const operator of operators) {
-        if (valueScrn.includes(operator)) {
+        if (experation.includes(operator)) {
           return;
         }
       }
     }
 
     // prevent adding two floting point
-    const splited = valueScrn.split(/([+\-X/])/);
+    const splited = experation.split(/([+\-X/])/);
     if (value === '.') {
       if (splited[splited.length-1].includes('.') || isOperator(lastChar)) {
         return;
@@ -63,24 +62,30 @@ export function calculation() {
     }
 
     // check if it is first value
-    if (screen.value === '0') {
+    if (experation === '0') {
       // if value is not operator save it
       if (!isOperator(value)) {
-        screen.value = value;
+        experation = value;
       }
 
     } else {
       // if current and last value is operator replace it
       if (isOperator(value) && isOperator(lastChar)) {
-        screen.value = screen.value.slice(0, -1) + value;
+        experation = experation.slice(0, -1) + value;
       } else {
         // add entered value to screen and experation value
-        screen.value += value;
+        experation += value;
       }
     }
 
-    if (valueScrn.length > 14) {
+    if (experation.length > 14) {
       screen.style.fontSize = '1.7rem';
+    }
+
+    screen.value = formating(experation);
+
+    if (value === '.') {
+      screen.value += '.';
     }
   }
 
@@ -89,6 +94,19 @@ export function calculation() {
     * if value of array is an operator don't format it
     * if value of array is number format it 
   */
+
+  function formating(experation) {
+    const parts = experation.split(/([+\-X/])/);
+
+    return parts.map(part => {
+      if (!isNaN(part) && part !== '') {
+        const number = Number(part.replace(/,/g, ''));
+        return number.toLocaleString();
+      }
+
+      return part;
+    }).join('');
+  }
 
   /* // delete
     * delet last charecter from screen
