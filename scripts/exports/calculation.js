@@ -8,25 +8,17 @@ export function calculation() {
 
   /* // add to screen
     * seperate intered value from screen value//
-    * prevent adding more than one operator
+    * prevent adding more than one operator//
     * prevent adding operation if not exist any number//
     * if operator exist remove last operator and add current//
     * if value is equal to x convert it to * //
-    * if accure text over flow decrease size of text
+    * if accure text over flow decrease size of text//
+    * prevent adding floting point more than one in every operation //
   */
 
   // check if current intered value is operator if it is return it
   function isOperator(value) {
     return ['-', '+', '/', 'x', '.'].includes(value.toLowerCase());
-  }
-
-  // convert X operation to *
-  function isX(operator) {
-    if (operator.toLowerCase() === 'x') {
-      return '*';
-    } else {
-      return operator;
-    }
   }
 
   // add event handler for each operation button 
@@ -42,24 +34,38 @@ export function calculation() {
 
   // add value to screen and experation element
   function addValue(value) {
-    // get last charecter of screen value
-    const lastChar = screen.value.slice(-1);
+    const valueScrn = screen.value;
+    const lastChar = valueScrn.slice(-1);
 
     // perevent add second operator
-    if (!(value === '.' && isNaN(value))) {
-      const parts = screen.value.split('');
-      for (const part of parts) {
-        if (isOperator(part) && !isOperator(lastChar)) {
+    if (!isOperator(lastChar) 
+      && isOperator(value) 
+      && value !== '.') {
+      const operators = ['+', '-', '/', 'X'];
+
+      for (const operator of operators) {
+        if (valueScrn.includes(operator)) {
           return;
         }
       }
+    }
+
+    // prevent adding two floting point
+    const splited = valueScrn.split(/([+\-X/])/);
+    if (value === '.') {
+      if (splited[splited.length-1].includes('.') || isOperator(lastChar)) {
+        return;
+      }
+    }
+
+    if (lastChar === '.' && isOperator(value)) {
+      return;
     }
 
     // check if it is first value
     if (screen.value === '0') {
       // if value is not operator save it
       if (!isOperator(value)) {
-        experation = value;
         screen.value = value;
       }
 
@@ -67,13 +73,14 @@ export function calculation() {
       // if current and last value is operator replace it
       if (isOperator(value) && isOperator(lastChar)) {
         screen.value = screen.value.slice(0, -1) + value;
-        experation = experation.slice(0, -1) + isX(value);
-
       } else {
         // add entered value to screen and experation value
         screen.value += value;
-        experation += isX(value);
       }
+    }
+
+    if (valueScrn.length > 14) {
+      screen.style.fontSize = '1.7rem';
     }
   }
 
