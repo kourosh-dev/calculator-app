@@ -92,8 +92,7 @@ export function calculation() {
     }).join('');
   }
 
-  // removing last character when delete button clicked
-  deleteKey.addEventListener('click', () => {
+  function deleteValue() {
     if (experation.length === 1) {
       experation = '0';
     } else {
@@ -101,7 +100,18 @@ export function calculation() {
     }
 
     screen.value = formating(experation);
-  });
+  }
+
+  // removing last character when delete button clicked
+  deleteKey.addEventListener('click', deleteValue);
+
+  function reset() {
+    experation = '0';
+    screen.value = experation;
+  }
+
+  // reseting value 
+  resetKey.addEventListener('click', reset);
 
   function calculation() {
     const result = eval(experation.replace('X', '*'));
@@ -109,20 +119,31 @@ export function calculation() {
     screen.value = Number(result).toLocaleString();
   }
 
-  // reseting value 
-  resetKey.addEventListener('click', () => {
-    experation = '0';
-    screen.value = experation;
-  });
-
   // calculate the experation and render it
   equalKey.addEventListener('click', calculation);
 
-  // calculate when enter pressed
+  // work with keyboard
   document.addEventListener('keydown', (e) => {
+    // prevent clicking button when key is pressed
+    e.preventDefault();
+
+    // run functions by clicking keys
     if (e.key === 'Enter') {
       calculation();
-      e.preventDefault();
-    }
+    } else if (e.key === 'Backspace') {
+      deleteValue();
+    } else if (e.key === 'Delete') {
+      reset();
+    } else if (e.key === '+') {
+      addValue(e.key);
+    } else if (e.key === '-') {
+      addValue(e.key);
+    } else if (e.key === '/') {
+      addValue(e.key);
+    } else if (e.key === 'x' || e.key === 'X') {
+      addValue('X');
+    } else if (!isNaN(e.key)) {
+      addValue(e.key);
+    } 
   });
 }

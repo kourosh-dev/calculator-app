@@ -15,7 +15,7 @@ A simple and user-friendly calculator application built to perform basic arithme
 - Clean and intuitive user interface.
 - Real-time calculation updates.
 - Prevent adding invalid value.
-- Also you could work with numarical and enter keyboard to calculate
+- Also you could work with keybord key like number and +, -, x, /, enter keys
 - toggle theme with top right button
 
 ## Technologies Used
