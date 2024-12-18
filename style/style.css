@@ -231,6 +231,10 @@ body {
   span {
     height: .7em;
   }
+
+  &:focus-visible {
+    outline: none;
+  }
 }
 
 [class*="shadow-key"] {
