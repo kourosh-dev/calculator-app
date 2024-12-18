@@ -103,6 +103,12 @@ export function calculation() {
     screen.value = formating(experation);
   });
 
+  function calculation() {
+    const result = eval(experation.replace('X', '*'));
+    experation = result.toString();
+    screen.value = Number(result).toLocaleString();
+  }
+
   // reseting value 
   resetKey.addEventListener('click', () => {
     experation = '0';
@@ -110,9 +116,13 @@ export function calculation() {
   });
 
   // calculate the experation and render it
-  equalKey.addEventListener('click', () => {
-    const result = eval(experation.replace('X', '*'));
-    experation = result.toString();
-    screen.value = Number(result).toLocaleString();
+  equalKey.addEventListener('click', calculation);
+
+  // calculate when enter pressed
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      calculation();
+      e.preventDefault();
+    }
   });
 }
