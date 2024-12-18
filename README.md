@@ -2,6 +2,8 @@
 
 A simple and user-friendly calculator application built to perform basic arithmetic operations such as addition, subtraction, multiplication, and division it also work with decimal number and your keyboard.
 
+![calculator](design/desktop-preview.jpg);
+
 ## Table of Contents
 1. [Features](#features)
 2. [Technologies Used](#technologies-used)
