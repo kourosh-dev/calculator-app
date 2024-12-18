@@ -109,11 +109,10 @@ export function calculation() {
     screen.value = experation;
   });
 
-
-
-  /* // calculation
-    * convert value to actual code and save the result in variable
-    * format result
-    * display it on screen
-  */
+  // calculate the experation and render it
+  equalKey.addEventListener('click', () => {
+    const result = eval(experation.replace('X', '*'));
+    experation = result.toString();
+    screen.value = Number(result).toLocaleString();
+  });
 }
