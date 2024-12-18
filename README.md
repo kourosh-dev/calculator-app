@@ -1,8 +1,13 @@
 # Calculator App
 
 A simple and user-friendly calculator application built to perform basic arithmetic operations such as addition, subtraction, multiplication, and division it also work with decimal number and your keyboard.
+you can see site by this URL:
+```
+https://kourosh-dev.github.io/calculator-app/
+```
 
-![calculator](design/desktop-preview.jpg);
+
+![calculator](design/desktop-preview.jpg)
 
 ## Table of Contents
 1. [Features](#features)
